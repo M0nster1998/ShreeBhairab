@@ -10,25 +10,14 @@ document.querySelector('.toggle-members').addEventListener('click', function () 
   }
 });
 
-// Toggle functionality for "See More" and "See Less"
-toggleButton.addEventListener('click', () => {
-  if (galleryGrid.classList.contains('expanded')) {
-    galleryGrid.classList.remove('expanded');
-    toggleButton.textContent = 'See More';
-  } else {
-    galleryGrid.classList.add('expanded');
-    toggleButton.textContent = 'See Less';
-  }
-});
-
 const galleryItems = document.querySelectorAll('.gallery-item');
 const fullscreenView = document.getElementById('fullscreen-view');
 const fullscreenImage = document.getElementById('fullscreen-image');
-const galleryGrid = document.querySelector('.gallery-grid');
-const toggleButton = document.getElementById('toggle-gallery');
 const closeButton = document.querySelector('.close');
 const prevButton = document.querySelector('.prev');
 const nextButton = document.querySelector('.next');
+const galleryGrid = document.querySelector('.gallery-grid');
+const toggleButton = document.getElementById('toggle-gallery');
 
 let currentImageIndex = 0;
 
@@ -65,10 +54,13 @@ function updateFullscreenImage() {
   fullscreenImage.src = currentImage.src;
 }
 
-// Close Fullscreen on Outside Click
-fullscreenView.addEventListener('click', (event) => {
-  if (event.target === fullscreenView) {
-    fullscreenView.classList.add('hidden');
+// Toggle functionality for "See More" and "See Less"
+toggleButton.addEventListener('click', () => {
+  if (galleryGrid.classList.contains('expanded')) {
+    galleryGrid.classList.remove('expanded');
+    toggleButton.textContent = 'See More';
+  } else {
+    galleryGrid.classList.add('expanded');
+    toggleButton.textContent = 'See Less';
   }
 });
-
