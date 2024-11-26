@@ -52,3 +52,21 @@ modal.addEventListener('click', (event) => {
     modal.style.display = 'none';
   }
 });
+
+const galleryItems = document.querySelectorAll('.gallery-item');
+
+// Add click event to each gallery image
+galleryItems.forEach((item) => {
+  item.addEventListener('click', () => {
+    // Check if the image is already enlarged
+    if (item.classList.contains('enlarged')) {
+      item.classList.remove('enlarged'); // Shrink the image back to its original size
+    } else {
+      // Remove enlargement from any other image
+      galleryItems.forEach((img) => img.classList.remove('enlarged'));
+      // Enlarge the clicked image
+      item.classList.add('enlarged');
+    }
+  });
+});
+
