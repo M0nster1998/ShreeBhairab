@@ -10,9 +10,22 @@ document.querySelector('.toggle-members').addEventListener('click', function () 
   }
 });
 
+// Toggle functionality for "See More" and "See Less"
+toggleButton.addEventListener('click', () => {
+  if (galleryGrid.classList.contains('expanded')) {
+    galleryGrid.classList.remove('expanded');
+    toggleButton.textContent = 'See More';
+  } else {
+    galleryGrid.classList.add('expanded');
+    toggleButton.textContent = 'See Less';
+  }
+});
+
 const galleryItems = document.querySelectorAll('.gallery-item');
 const fullscreenView = document.getElementById('fullscreen-view');
 const fullscreenImage = document.getElementById('fullscreen-image');
+const galleryGrid = document.querySelector('.gallery-grid');
+const toggleButton = document.getElementById('toggle-gallery');
 const closeButton = document.querySelector('.close');
 const prevButton = document.querySelector('.prev');
 const nextButton = document.querySelector('.next');
