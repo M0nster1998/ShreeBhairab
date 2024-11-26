@@ -99,18 +99,19 @@ header {
   margin: 10px auto;
 }
 
-/* Gallery Section */
-.gallery-grid img {
+/* Gallery Styles */
+.gallery-grid img,
+.extra-photos img {
   width: 100%;
   height: auto;
-  border: 3px solid #333;
+  border: 2px solid #ddd;
   cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
-.gallery-grid img:hover {
+.gallery-grid img:hover,
+.extra-photos img:hover {
   transform: scale(1.1);
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 
 /* Modal Styles */
