@@ -115,6 +115,15 @@ header {
   transform: scale(1.1); /* Slight hover effect for interaction */
 }
 
+.gallery-item.enlarged {
+  width: 500px; /* Enlarged width */
+  height: auto; /* Maintain aspect ratio */
+  border: 4px solid #333;
+  z-index: 10;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
 /* Modal Styles */
 .modal {
   display: none; /* Hidden by default */
