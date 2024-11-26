@@ -9,6 +9,7 @@
 	<script defer src ="Script.js"></script>
 </head>
 <body>
+	
   <!-- Header Section -->
   <header>
     <div class="header-left">
@@ -25,6 +26,7 @@
       </ul>
     </nav>
   </header>
+	
  <!-- Feel the Rhythm Section -->
 <section id="feel">
   <div class="feel-container">
@@ -32,6 +34,7 @@
     <p class="band-name">SHREE BHAIRAB&nbsp;&nbsp;</p>
   </div>
 </section>
+	
   <!-- About Section -->
   <section id="about">
     <h2>About Us</h2>
@@ -44,21 +47,21 @@
   <section id="gallery">
     <h2>Photo Gallery</h2>
     <div class="gallery-grid">
-      <img src="../Image/20231227-20231227-_MG_1821.jpg" alt="Program 1">
-      <img src="../Image/8ace4b8d-476c-4b9a-91c4-96fa5eee2e82.jpg" alt="Program 2">
-      <img src="../Image/Mp-282.jpg" alt="Program 3">
+      <img src="../Image/20231227-20231227-_MG_1821.jpg" alt="Program 1" class="gallery-item">
+      <img src="../Image/8ace4b8d-476c-4b9a-91c4-96fa5eee2e82.jpg" alt="Program 2" class="gallery-item">
+      <img src="../Image/Mp-282.jpg" alt="Program 3" class="gallery-item">
     </div>
   </section>
 
-	<!-- Modal for Enlarged Image -->
-<div id="image-modal" class="modal">
+<!-- Fullscreen Image Viewer -->
+<div id="fullscreen-view" class="fullscreen hidden">
   <span class="close">&times;</span>
-  <button class="prev-btn">❮</button>
-  <img class="modal-content" id="modal-image">
-  <button class="next-btn">❯</button>
+  <button class="prev">❮</button>
+  <img src="" alt="Fullscreen View" id="fullscreen-image">
+  <button class="next">❯</button>
 </div>
 
-	<!-- Media Section -->
+<!-- Media Section -->
   <section id="media">
     <h2>Latest Videos</h2>
     <div class="video-grid">
@@ -99,7 +102,6 @@
     </div>
     <button class="toggle-members">See More</button>
   </section>
-
   
   <!-- Contact Section -->
   <section id="contact">
