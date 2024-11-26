@@ -11,62 +11,51 @@ document.querySelector('.toggle-members').addEventListener('click', function () 
 });
 
 const galleryItems = document.querySelectorAll('.gallery-item');
-const modal = document.getElementById('image-modal');
-const modalImage = document.getElementById('modal-image');
-const closeModal = document.querySelector('.close');
-const prevButton = document.querySelector('.prev-btn');
-const nextButton = document.querySelector('.next-btn');
+const fullscreenView = document.getElementById('fullscreen-view');
+const fullscreenImage = document.getElementById('fullscreen-image');
+const closeButton = document.querySelector('.close');
+const prevButton = document.querySelector('.prev');
+const nextButton = document.querySelector('.next');
 
 let currentImageIndex = 0;
 
-// Open modal on image click
+// Open Fullscreen View
 galleryItems.forEach((item, index) => {
   item.addEventListener('click', () => {
-    modal.style.display = 'flex';
-    modalImage.src = item.src; // Set the source of the clicked image
-    currentImageIndex = index; // Store the current image index
+    currentImageIndex = index;
+    updateFullscreenImage();
+    fullscreenView.classList.remove('hidden');
   });
 });
 
-// Close modal
-closeModal.addEventListener('click', () => {
-  modal.style.display = 'none';
+// Close Fullscreen View
+closeButton.addEventListener('click', () => {
+  fullscreenView.classList.add('hidden');
 });
 
-// Navigate to the previous image
+// Show Previous Image
 prevButton.addEventListener('click', () => {
   currentImageIndex =
     (currentImageIndex - 1 + galleryItems.length) % galleryItems.length;
-  modalImage.src = galleryItems[currentImageIndex].src;
+  updateFullscreenImage();
 });
 
-// Navigate to the next image
+// Show Next Image
 nextButton.addEventListener('click', () => {
   currentImageIndex = (currentImageIndex + 1) % galleryItems.length;
-  modalImage.src = galleryItems[currentImageIndex].src;
+  updateFullscreenImage();
 });
 
-// Close modal when clicking outside the image
-modal.addEventListener('click', (event) => {
-  if (event.target === modal) {
-    modal.style.display = 'none';
+// Update Fullscreen Image
+function updateFullscreenImage() {
+  const currentImage = galleryItems[currentImageIndex];
+  fullscreenImage.src = currentImage.src;
+}
+
+// Close Fullscreen on Outside Click
+fullscreenView.addEventListener('click', (event) => {
+  if (event.target === fullscreenView) {
+    fullscreenView.classList.add('hidden');
   }
-});
-
-const galleryItems = document.querySelectorAll('.gallery-item');
-
-// Add click event to each gallery image
-galleryItems.forEach((item) => {
-  item.addEventListener('click', () => {
-    // Check if the image is already enlarged
-    if (item.classList.contains('enlarged')) {
-      item.classList.remove('enlarged'); // Shrink the image back to its original size
-    } else {
-      // Remove enlargement from any other image
-      galleryItems.forEach((img) => img.classList.remove('enlarged'));
-      // Enlarge the clicked image
-      item.classList.add('enlarged');
-    }
-  });
 });
 
