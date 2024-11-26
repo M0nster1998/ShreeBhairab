@@ -102,8 +102,9 @@ header {
 /* Gallery Styles */
 .gallery-grid img,
 .extra-photos img {
-  width: 100%;
-  height: auto;
+  width: 150px; /* Set smaller width for images in the grid */
+  height: 150px; /* Maintain a consistent height */
+  object-fit: cover; /* Ensure images fit neatly without distortion */
   border: 2px solid #ddd;
   cursor: pointer;
   transition: transform 0.3s ease;
@@ -111,7 +112,7 @@ header {
 
 .gallery-grid img:hover,
 .extra-photos img:hover {
-  transform: scale(1.1);
+  transform: scale(1.1); /* Slight zoom effect on hover */
 }
 
 /* Modal Styles */
@@ -132,6 +133,7 @@ header {
 .modal-content {
   max-width: 80%;
   max-height: 80%;
+  transition: transform 0.3s ease-in-out; /* Smooth zoom-in effect */
 }
 
 .close {
