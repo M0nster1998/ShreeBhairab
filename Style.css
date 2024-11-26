@@ -102,11 +102,20 @@ header {
 /* Gallery Grid */
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 10px;
-  overflow: hidden; /* Hide excess images */
-  max-height: 350px; /* Limit initial height */
-  transition: max-height 0.3s ease;
+  padding: 20px;
+  overflow: hidden; /* Hide extra rows initially */
+  max-height: 350px; /* Limit initial number of rows */
+  transition: max-height 0.3s ease-in-out;
+  background: white;
+  margin: 0 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.gallery-grid.expanded {
+  max-height: none; /* Show all images */
 }
 
 .gallery-item {
@@ -115,7 +124,8 @@ header {
   object-fit: cover;
   border: 2px solid #ddd;
   border-radius: 5px;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  cursor: pointer;
 }
 
 .gallery-item:hover {
@@ -123,16 +133,11 @@ header {
   border-color: #888;
 }
 
-/* Hidden Overflow Styling */
-.gallery-grid.expanded {
-  max-height: none; /* Show all images */
-}
-
 /* Button Styling */
 .btn {
   display: block;
   margin: 20px auto;
-  padding: 10px 20px;
+  padding: 12px 25px;
   font-size: 16px;
   color: white;
   background: linear-gradient(45deg, #ff5722, #ff9800);
@@ -140,6 +145,7 @@ header {
   border-radius: 5px;
   cursor: pointer;
   transition: background 0.3s ease;
+  text-transform: uppercase;
 }
 
 .btn:hover {
@@ -208,7 +214,6 @@ header {
 .next:hover {
   background: rgba(255, 255, 255, 0.4);
 }
-
 
 /* Members Section */
 #members {
