@@ -76,8 +76,19 @@ toggleButton.addEventListener('click', () => {
   if (galleryGrid.classList.contains('expanded')) {
     galleryGrid.classList.remove('expanded');
     toggleButton.textContent = 'See More';
+
+
+    
   } else {
     galleryGrid.classList.add('expanded');
     toggleButton.textContent = 'See Less';
   }
 });
+
+const menuToggle = document.getElementById('menu-toggle');
+const mobileNav = document.getElementById('mobile-nav');
+
+menuToggle.addEventListener('click', () => {
+  mobileNav.classList.toggle('active');
+});
+
