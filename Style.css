@@ -1,100 +1,119 @@
-/* Universal Reset */
+/* Reset */
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-/* Body Styles */
+html {
+  font-size: 16px;
+  scroll-behavior: smooth; /* Adds smooth scrolling for navigation */
+}
+
 body {
   font-family: 'Raleway', sans-serif;
-  line-height: 1.6;
-  margin: 0;
-  padding: 0;
   background: #f9f9f9;
   color: #333;
-}
-
-/* Section Spacing */
-section {
-  padding: 20px 5%;
-  max-width: 1200px;
-  margin: auto;
+  line-height: 1.6;
 }
 
 /* Header */
 header {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 5%;
+  padding: 1rem 5%;
   background: #333;
   color: white;
-}
-
-.header-left {
-  display: flex;
-  align-items: center;
+  flex-wrap: wrap;
 }
 
 .band-logo {
   width: 50px;
   height: auto;
-  margin-right: 10px;
+}
+
+.band-name {
+  font-size: 1.5rem;
+  font-family: 'Cinzel Decorative', cursive;
+  text-align: center;
+  flex: 1;
 }
 
 .header-right ul {
   display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
   list-style: none;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
 }
 
 .header-right ul li a {
   text-decoration: none;
   color: white;
   font-weight: bold;
+  transition: color 0.3s;
+}
+
+.header-right ul li a:hover {
+  color: #f39c12;
 }
 
 @media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
   .header-right ul {
+    flex-wrap: wrap;
     justify-content: center;
-    width: 100%;
   }
 }
 
-/* Feel the Rhythm Section */
+/* Hero Section */
 #feel {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  height: 80vh;
-  padding: 20px;
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url('images/feel-the-rhythm.jpg') no-repeat center center/cover;
-  color: white;
+  align-items: center;
+  min-height: 90vh;
   text-align: center;
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.6)
+    ),
+    url('images/feel-the-rhythm.jpg') no-repeat center/cover;
+  color: white;
+  padding: 2rem;
 }
 
 #feel h1 {
   font-size: clamp(2rem, 5vw, 4rem);
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+  margin-bottom: 1rem;
 }
 
 #feel .band-name {
-  font-size: clamp(1rem, 4vw, 2rem);
-  margin-top: 10px;
-  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.7);
+  font-size: clamp(1rem, 3vw, 2rem);
+  font-weight: bold;
 }
 
 /* About Section */
+#about {
+  padding: 2rem 5%;
+  max-width: 800px;
+  margin: 0 auto; /* Centers the section */
+  text-align: justify;
+}
+
+#about h2 {
+  text-align: center;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  margin-bottom: 1rem;
+}
+
 #about p {
   font-size: clamp(1rem, 2.5vw, 1.25rem);
-  max-width: 800px;
-  margin: 10px auto;
-  text-align: justify;
 }
 
 /* Gallery Grid */
