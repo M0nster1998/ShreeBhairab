@@ -1,14 +1,22 @@
-// Toggle functionality for Members
-document.querySelector('.toggle-members').addEventListener('click', function () {
-  const extraMembers = document.querySelector('.extra-members');
-  if (extraMembers.style.display === 'none' || extraMembers.style.display === '') {
-    extraMembers.style.display = 'grid';
-    this.textContent = 'See Less';
-  } else {
-    extraMembers.style.display = 'none';
-    this.textContent = 'See More';
-  }
+const hiddenMembers = document.querySelectorAll('.member-card.hidden');
+const toggleMembersButton = document.getElementById('toggle-members');
+
+// Toggle "See More" and "See Less" functionality
+toggleMembersButton.addEventListener('click', () => {
+  const isVisible = hiddenMembers[0].style.display === 'flex'; // Check visibility
+
+  hiddenMembers.forEach(member => {
+    if (isVisible) {
+      member.style.display = 'none'; // Hide hidden members
+    } else {
+      member.style.display = 'flex'; // Show hidden members
+    }
+  });
+
+  // Update button text
+  toggleMembersButton.textContent = isVisible ? 'See More' : 'See Less';
 });
+
 
 const galleryItems = document.querySelectorAll('.gallery-item');
 const fullscreenView = document.getElementById('fullscreen-view');
