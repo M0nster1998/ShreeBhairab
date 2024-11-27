@@ -243,19 +243,20 @@ header {
   display: none; /* Hide initially */
 }
 
-/* Member Cards */
+/* Member Card */
 .member-card {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  background-color: #ffffff;
+  background-color: #f5f7fa;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   padding: 20px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  width: 200px;
-  height: 250px;
+  width: 220px; /* Increase card width */
+  height: 250px; /* Increase card height */
+  position: relative; /* To properly center image */
 }
 
 .member-card:hover {
@@ -263,26 +264,30 @@ header {
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Member Images */
+/* Member Image */
 .member-item {
-  width: 100px;
-  height: 100px;
+  width: 180px; /* Larger image */
+  height: 180px; /* Larger image */
+  align-item: center;
   object-fit: cover;
-  border-radius: 50%;
-  border: 3px solid #8b0000; /* Dark red border */
+    border: 5px solid #000000; /* Dark black border */
   margin-bottom: 10px;
+  display: block;
+  position: absolute;
+  top: 45%; /* Position the image in the center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Adjust to truly center */
 }
 
-.member-item:hover {
-  border-color: #b22222; /* Firebrick hover effect */
-}
-
-/* Member Names */
+/* Member Name */
 .member-name {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   color: #333;
-  margin-top: 10px;
   font-weight: bold;
+  position: absolute;
+  bottom: 15px; /* Position name at the bottom of the card */
+  text-align: center;
+  width: 100%;
 }
 
 /* Button Styling */
@@ -307,7 +312,7 @@ header {
 /* Media Section */
 #media {
   padding: 40px 20px;
-  background: #f9f9f9;
+  background: #fdfcfb;
 }
 
 .video-grid {
