@@ -1,10 +1,20 @@
 const hiddenMembers = document.querySelectorAll('.member-card.hidden');
 const toggleMembersButton = document.getElementById('toggle-members');
 
+// Initially show only the first 3 members
+window.onload = () => {
+  // Ensure only the first 3 members are visible
+  hiddenMembers.forEach(member => {
+    member.style.display = 'none'; // Hide extra members initially
+  });
+};
+
 // Toggle "See More" and "See Less" functionality
 toggleMembersButton.addEventListener('click', () => {
-  const isVisible = hiddenMembers[0].style.display === 'flex'; // Check visibility
+  // Check if the first hidden member is already visible
+  const isVisible = hiddenMembers[0].style.display === 'flex';
 
+  // Toggle the visibility of hidden members
   hiddenMembers.forEach(member => {
     if (isVisible) {
       member.style.display = 'none'; // Hide hidden members
@@ -13,10 +23,9 @@ toggleMembersButton.addEventListener('click', () => {
     }
   });
 
-  // Update button text
+  // Update button text based on visibility
   toggleMembersButton.textContent = isVisible ? 'See More' : 'See Less';
 });
-
 
 const galleryItems = document.querySelectorAll('.gallery-item');
 const fullscreenView = document.getElementById('fullscreen-view');
