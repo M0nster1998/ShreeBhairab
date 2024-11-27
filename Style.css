@@ -215,35 +215,94 @@ header {
   background: rgba(255, 255, 255, 0.4);
 }
 
-/* Members Section */
+/* Member Section */
 #members {
   padding: 40px 20px;
-}
-
-.members-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
+  background-color: #f9f9f9;
   text-align: center;
 }
 
-.members-grid img {
-  width: 100%;
-  height: auto;
-  border-radius: 50%;
-  transition: transform 0.3s ease;
-}
-
-.members-grid img:hover {
-  transform: scale(1.1);
-}
-
-.members-grid p {
-  margin-top: 10px;
-  font-size: 1rem;
+#members h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #222;
   font-weight: bold;
 }
 
+/* Member Grid */
+.members-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Three cards per row */
+  gap: 20px;
+  justify-items: center;
+  padding: 20px;
+}
+
+/* Initially hidden cards */
+.hidden {
+  display: none; /* Hidden by default */
+}
+
+/* Member Cards */
+.member-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 200px;
+  height: 250px;
+}
+
+.member-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Member Images */
+.member-item {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #8b0000; /* Dark red border */
+  margin-bottom: 10px;
+}
+
+.member-item:hover {
+  border-color: #b22222; /* Firebrick hover effect */
+}
+
+/* Member Names */
+.member-name {
+  font-size: 1.1rem;
+  color: #333;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+/* Button Styling */
+.btn {
+  display: block;
+  margin: 20px auto;
+  padding: 12px 25px;
+  font-size: 16px;
+  color: white;
+  background: linear-gradient(45deg, #ff7f50, #ff4500);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  text-transform: uppercase;
+}
+
+.btn:hover {
+  background: linear-gradient(45deg, #ff4500, #ff7f50);
+}
 /* Media Section */
 #media {
   padding: 40px 20px;
