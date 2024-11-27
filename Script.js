@@ -10,6 +10,7 @@ window.onload = () => {
 };
 
 // Toggle "See More" and "See Less" functionality
+
 toggleMembersButton.addEventListener('click', () => {
   // Check if the first hidden member is already visible
   const isVisible = hiddenMembers[0].style.display === 'flex';
@@ -76,9 +77,6 @@ toggleButton.addEventListener('click', () => {
   if (galleryGrid.classList.contains('expanded')) {
     galleryGrid.classList.remove('expanded');
     toggleButton.textContent = 'See More';
-
-
-    
   } else {
     galleryGrid.classList.add('expanded');
     toggleButton.textContent = 'See Less';
@@ -91,4 +89,3 @@ const mobileNav = document.getElementById('mobile-nav');
 menuToggle.addEventListener('click', () => {
   mobileNav.classList.toggle('active');
 });
-
