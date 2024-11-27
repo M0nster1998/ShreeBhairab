@@ -238,9 +238,9 @@ header {
   padding: 20px;
 }
 
-/* Initially hidden cards */
+/* Initially Hidden Members */
 .hidden {
-  display: none; /* Hidden by default */
+  display: none; /* Hide initially */
 }
 
 /* Member Cards */
@@ -303,6 +303,7 @@ header {
 .btn:hover {
   background: linear-gradient(45deg, #ff4500, #ff7f50);
 }
+
 /* Media Section */
 #media {
   padding: 40px 20px;
