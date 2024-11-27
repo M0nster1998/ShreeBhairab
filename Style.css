@@ -269,29 +269,73 @@ header {
   font-weight: bold;
 }
 
-/* Videos Section */
+/* Media Section */
+#media {
+  padding: 40px 20px;
+  background: #fdfcfb;
+}
+
 .video-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
 }
 
-/* Buttons */
-.btn {
-  padding: 10px 20px;
-  font-size: clamp(0.8rem, 2vw, 1rem);
+.video-item iframe {
+  width: 100%;
+  height: 200px;
   border: none;
-  border-radius: 5px;
-  background: linear-gradient(45deg, #ff5722, #ff9800);
+}
+
+/* Responsive Buttons */
+.toggle-photos,
+.toggle-members,
+.toggle-videos {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background: #333;
   color: white;
-  text-transform: uppercase;
-  transition: background 0.3s ease;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 5px;
+  transition: background 0.3s ease, transform 0.2s ease;
+  text-align: center;
 }
 
-.btn:hover {
-  background: linear-gradient(45deg, #ff9800, #ff5722);
+.toggle-photos:hover,
+.toggle-members:hover,
+.toggle-videos:hover {
+  background: #f39c12;
+  transform: scale(1.05);
 }
 
+@media (max-width: 768px) {
+  .toggle-photos,
+  .toggle-members,
+  .toggle-videos {
+    font-size: 0.9rem;
+    padding: 8px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .toggle-photos,
+  .toggle-members,
+  .toggle-videos {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+  }
+}
+
+/* Contact Section */
+#contact {
+  padding: 20px;
+  background: #333;
+  color: white;
+  text-align: center;
+}
 /* Footer */
 footer {
   background: #222;
@@ -301,9 +345,13 @@ footer {
 }
 
 footer .social-icons img {
-  width: 30px;
-  height: auto;
+  width: 40px;
   margin: 5px;
+  transition: transform 0.3s ease;
+}
+
+footer .social-icons a:hover img {
+  transform: scale(1.2);
 }
 
 /* Responsive Adjustments */
