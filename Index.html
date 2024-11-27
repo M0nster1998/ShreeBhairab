@@ -82,29 +82,39 @@
 
    <!-- Members Section -->
   <section id="members">
-    <h2>Our Members</h2>
-    <div class="members-grid">
-      <div class="member">
-        <img src="images/member1.jpg" alt="Member 1">
-        <p>John Doe - Lead Guitarist</p>
-      </div>
-      <div class="member">
-        <img src="images/member2.jpg" alt="Member 2">
-        <p>Jane Smith - Drummer</p>
-      </div>
+  <h2>Our Members</h2>
+  <div class="members-grid">
+    <!-- First Row -->
+    <div class="member-card">
+      <img src="images/member1.jpg" alt="Member 1" class="member-item">
+      <p class="member-name">John Doe</p>
     </div>
-    <div class="extra-members" style="display: none;">
-      <div class="member">
-        <img src="images/member3.jpg" alt="Member 3">
-        <p>Mark Lee - Pianist</p>
-      </div>
-      <div class="member">
-        <img src="images/member4.jpg" alt="Member 4">
-        <p>Emily Davis - Bass Guitarist</p>
-      </div>
+    <div class="member-card">
+      <img src="images/member2.jpg" alt="Member 2" class="member-item">
+      <p class="member-name">Jane Smith</p>
     </div>
-    <button class="toggle-members">See More</button>
-  </section>
+    <div class="member-card">
+      <img src="images/member3.jpg" alt="Member 3" class="member-item">
+      <p class="member-name">Michael Lee</p>
+    </div>
+
+    <!-- Hidden Members -->
+    <div class="member-card hidden">
+      <img src="images/member4.jpg" alt="Member 4" class="member-item">
+      <p class="member-name">Emily Davis</p>
+    </div>
+    <div class="member-card hidden">
+      <img src="images/member5.jpg" alt="Member 5" class="member-item">
+      <p class="member-name">Chris Johnson</p>
+    </div>
+    <div class="member-card hidden">
+      <img src="images/member6.jpg" alt="Member 6" class="member-item">
+      <p class="member-name">Sarah Brown</p>
+    </div>
+  </div>
+
+  <button id="toggle-members" class="btn">See More</button>
+</section>
   
   <!-- Contact Section -->
   <section id="contact">
